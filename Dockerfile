@@ -23,4 +23,6 @@ RUN curl -sSL "https://github.com/composer/composer/releases/download/${COMPOSER
 # Deployer
 RUN curl -LO https://deployer.org/deployer.phar
 RUN mv deployer.phar /usr/local/bin/dep
-RUN chmod +x /usr/local/bin/dep
+
+# Make all binaries executable
+RUN chmod +x /usr/local/bin/*
