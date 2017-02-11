@@ -21,8 +21,7 @@ ENV COMPOSER_VERSION 1.3.2
 RUN curl -sSL "https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar" -o /usr/local/bin/composer
 
 # Deployer
-RUN curl -LO https://deployer.org/deployer.phar
-RUN mv deployer.phar /usr/local/bin/dep
+RUN curl -L https://deployer.org/deployer.phar -o /usr/local/bin/dep
 
 # Make all binaries executable
 RUN chmod +x /usr/local/bin/*
