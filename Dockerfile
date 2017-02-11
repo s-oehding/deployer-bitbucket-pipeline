@@ -18,7 +18,7 @@ RUN apk add --update --no-cache \
 
 # Composer
 ENV COMPOSER_VERSION 1.3.2
-RUN curl -sSL "https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar" -o /usr/local/bin/composer
+RUN curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
 
 # Deployer
 RUN curl -L https://deployer.org/deployer.phar -o /usr/local/bin/dep
