@@ -21,7 +21,16 @@ RUN apt-get update && \
                                                     php7.0-mysql \
                                                     php-imagick \
                                                     openssh-client \
-                                                    git 
+                                                    git \
+                                                    python-software-properties
+
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+RUN apt-get update && \
+        DEBIAN_FRONTEND=noninteractive \
+        apt-get install -q -y nodejs
+
+RUN npm install -g bower
+
 # Composer
 ENV COMPOSER_VERSION 1.3.2
 RUN curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
