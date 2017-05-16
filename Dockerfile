@@ -1,4 +1,4 @@
-FROM debian:jessie-slim
+FROM ubuntu:16.04
 
 # Switch to root to install some system-wide stuff
 USER root
