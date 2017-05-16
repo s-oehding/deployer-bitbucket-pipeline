@@ -24,7 +24,7 @@ RUN apt-get update && \
                                                     git \
                                                     python-software-properties
 
-RUN curl -sL https://deb.nodesource.com/setup_6.x | -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get update && \
         DEBIAN_FRONTEND=noninteractive \
         apt-get install -q -y nodejs
