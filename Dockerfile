@@ -3,18 +3,16 @@ FROM debian:jessie-slim
 # Switch to root to install some system-wide stuff
 USER root
 
-RUN apk add --update --no-cache \
-    php7 \
-    php7-ctype \
-    php7-curl \
-    php7-dom \
-    php7-json \
-    php7-mbstring \
-    php7-openssl \
-    php7-phar \
-    php7-xml \
-    && rm -rf /var/cache/apk/* \
-    && ln -s /usr/bin/php7 /usr/bin/php
+RUN apt install php7
+RUN apt install php7-ctype
+RUN apt install php7-curl
+RUN apt install php7-dom
+RUN apt install php7-json
+RUN apt install php7-mbstring
+RUN apt install php7-openssl
+RUN apt install php7-phar
+RUN apt install php7-xml
+RUN ln -s /usr/bin/php7 /usr/bin/php
 
 # Composer
 ENV COMPOSER_VERSION 1.3.2
