@@ -1,19 +1,28 @@
 FROM ubuntu:16.04
 
-# Switch to root to install some system-wide stuff
-USER root
+RUN apt-get update && \
+        DEBIAN_FRONTEND=noninteractive \
+        apt-get install -q -y php7.0 \
+                                                    php7.0-fpm \
+                                                    imagemagick \
+                                                    php-memcached \
+                                                    php7.0-soap \
+                                                    php7.0-cli \
+                                                    php7.0-curl \
+                                                    php7.0-dev \
+                                                    php7.0-gd \
+                                                    php7.0-mcrypt \
+                                                    php7.0-zip \
+                                                    php7.0-xsl \
+                                                    php7.0-odbc \
+                                                    php7.0-mbstring \
+                                                    php-pear \
+                                                    php7.0-intl \
+                                                    php7.0-mysql \
+                                                    php-imagick
 
-RUN apt-cache search php
-RUN apt-get install php7
-RUN apt-get install php7-ctype
-RUN apt-get install php7-curl
-RUN apt-get install php7-dom
-RUN apt-get install php7-json
-RUN apt-get install php7-mbstring
-RUN apt-get install php7-openssl
-RUN apt-get install php7-phar
-RUN apt-get install php7-xml
-RUN ln -s /usr/bin/php7 /usr/bin/php
+COPY docker-entrypoint.sh /usr/local/bin/
+CMD ["php-fpm7.0"]
 
 # Composer
 ENV COMPOSER_VERSION 1.3.2
