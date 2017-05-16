@@ -19,8 +19,8 @@ RUN apt-get update && \
                                                     php-pear \
                                                     php7.0-intl \
                                                     php7.0-mysql \
-                                                    php-imagick
-
+                                                    php-imagick \
+                                                    openssh-client
 # Composer
 ENV COMPOSER_VERSION 1.3.2
 RUN curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
