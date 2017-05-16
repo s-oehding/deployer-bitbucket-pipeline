@@ -21,7 +21,6 @@ RUN apt-get update && \
                                                     php7.0-mysql \
                                                     php-imagick
 
-COPY docker-entrypoint.sh /usr/local/bin/
 CMD ["php-fpm7.0"]
 
 # Composer
