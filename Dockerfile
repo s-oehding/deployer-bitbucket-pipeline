@@ -1,4 +1,4 @@
-FROM docksal/bitbucket-pipelines-agent:edge
+FROM debian:jessie-slim
 
 # Switch to root to install some system-wide stuff
 USER root
