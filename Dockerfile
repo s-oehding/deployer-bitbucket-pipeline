@@ -21,8 +21,6 @@ RUN apt-get update && \
                                                     php7.0-mysql \
                                                     php-imagick
 
-CMD ["php-fpm7.0"]
-
 # Composer
 ENV COMPOSER_VERSION 1.3.2
 RUN curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
@@ -32,3 +30,5 @@ RUN curl -L https://deployer.org/releases/v4.3.0/deployer.phar -o /usr/local/bin
 
 # Make all binaries executable
 RUN chmod +x /usr/local/bin/*
+
+CMD ["php-fpm7.0"]
