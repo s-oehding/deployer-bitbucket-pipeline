@@ -1,5 +1,8 @@
 FROM ubuntu:16.04
 
+RUN add-apt-repository ppa:ondrej/php
+RUN apt-get update
+
 RUN apt-get update && \
         DEBIAN_FRONTEND=noninteractive \
         apt-get install -q -y php7.2 \
