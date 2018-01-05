@@ -3,26 +3,26 @@ FROM ubuntu:16.04
 RUN apt-get update && \
         DEBIAN_FRONTEND=noninteractive \
         apt-get install -q -y php7.2 \
-                                                    php7.2-fpm \
-                                                    imagemagick \
-                                                    php-memcached \
-                                                    php7.2-soap \
-                                                    php7.2-cli \
-                                                    php7.2-curl \
-                                                    php7.2-dev \
-                                                    php7.2-gd \
-                                                    php7.2-mcrypt \
-                                                    php7.2-zip \
-                                                    php7.2-xsl \
-                                                    php7.2-odbc \
-                                                    php7.2-mbstring \
-                                                    php-pear \
-                                                    php7.2-intl \
-                                                    php7.2-mysql \
-                                                    php-imagick \
-                                                    openssh-client \
-                                                    git \
-                                                    python-software-properties
+        php7.2-fpm \
+        imagemagick \
+        php-memcached \
+        php7.2-soap \
+        php7.2-cli \
+        php7.2-curl \
+        php7.2-dev \
+        php7.2-gd \
+        php7.2-mcrypt \
+        php7.2-zip \
+        php7.2-xsl \
+        php7.2-odbc \
+        php7.2-mbstring \
+        php-pear \
+        php7.2-intl \
+        php7.2-mysql \
+        php-imagick \
+        openssh-client \
+        git \
+        python-software-properties
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get update && \
