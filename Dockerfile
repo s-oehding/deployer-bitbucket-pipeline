@@ -2,23 +2,23 @@ FROM ubuntu:16.04
 
 RUN apt-get update && \
         DEBIAN_FRONTEND=noninteractive \
-        apt-get install -q -y php7.0 \
-                                                    php7.0-fpm \
+        apt-get install -q -y php7.2 \
+                                                    php7.2-fpm \
                                                     imagemagick \
                                                     php-memcached \
-                                                    php7.0-soap \
-                                                    php7.0-cli \
-                                                    php7.0-curl \
-                                                    php7.0-dev \
-                                                    php7.0-gd \
-                                                    php7.0-mcrypt \
-                                                    php7.0-zip \
-                                                    php7.0-xsl \
-                                                    php7.0-odbc \
-                                                    php7.0-mbstring \
+                                                    php7.2-soap \
+                                                    php7.2-cli \
+                                                    php7.2-curl \
+                                                    php7.2-dev \
+                                                    php7.2-gd \
+                                                    php7.2-mcrypt \
+                                                    php7.2-zip \
+                                                    php7.2-xsl \
+                                                    php7.2-odbc \
+                                                    php7.2-mbstring \
                                                     php-pear \
-                                                    php7.0-intl \
-                                                    php7.0-mysql \
+                                                    php7.2-intl \
+                                                    php7.2-mysql \
                                                     php-imagick \
                                                     openssh-client \
                                                     git \
@@ -40,4 +40,4 @@ RUN curl -LO https://deployer.org/deployer.phar -o /usr/local/bin/dep
 # Make all binaries executable
 RUN chmod +x /usr/local/bin/*
 
-CMD ["php-fpm7.0"]
+CMD ["php-fpm7.2"]
